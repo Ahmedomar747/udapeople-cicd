@@ -231,6 +231,9 @@ jobs:
       - image: cimg/python:3.10
     steps:
       - checkout
+      - install_awscli
+      - install_ansible
+      - install_nodejs
       - restore_cache:
           keys: [backend-build]
       - run:
