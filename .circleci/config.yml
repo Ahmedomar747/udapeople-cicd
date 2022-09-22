@@ -186,11 +186,11 @@ jobs:
           fingerprints: ["b2:cd:70:cb:d8:19:79:4b:60:b2:e3:a3:b5:37:47:7c"]
       - attach_workspace:
           at: ~/
-      - run:
-          name: Install dependencies
-          command: |
-            # Your code here
-            exit 1
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       # Your code here
+      #       exit 1
       - run:
           name: Configure Server
           command: |
@@ -200,21 +200,21 @@ jobs:
             ansible-playbook -i inventory.txt configure-server.yml
             # Here's where you will add some code to rollback on failure      
 
-  run-migrations:
-    docker:
-      - image: amazon/aws-cli:latest
-    steps:
-      - checkout
-      - run:
-          name: Run migrations
-          command: |
-            # Your code here
-            exit 1
-      - run:
-          name: Send migration results to memstash
-          command: |
-            # Your code here
-            exit 1
+  # run-migrations:
+  #   docker:
+  #     - image: amazon/aws-lambda-nodejs:latest
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Run migrations
+  #         command: |
+  #           # Your code here
+  #           exit 1
+  #     - run:
+  #         name: Send migration results to memstash
+  #         command: |
+  #           # Your code here
+  #           exit 1
      # Here's where you will add some code to rollback on failure      
 
 #   deploy-frontend:
